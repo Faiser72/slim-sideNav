@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, Renderer2 } from "@angular/core";
+import { Component, OnInit, Inject, Renderer2, EventEmitter, Output } from "@angular/core";
 import { Router } from "@angular/router";
 import { DOCUMENT } from "@angular/common";
 
@@ -12,9 +12,11 @@ import { DOCUMENT } from "@angular/common";
 export class DefaultComponent {
   isMenuOpen = true;
   contentMargin = 240;
-  hidden= true
+  hidden = true
 
   sideBarOpen;
+
+  @Output() public url = new EventEmitter<any>();
 
   constructor(
     private router: Router,
@@ -30,6 +32,17 @@ export class DefaultComponent {
     //   this.hasBackValue = false;
     // }
   }
+  data: any;
+  currentUrl() {
+    this.url.emit(this.router.url);
+    this.data = this.router.url;
+    console.log("direct", this.router.url);
+  }
+
+  currentUrlTepm() {
+    this.currentUrl();
+  }
+
 
   task: string[] = [
     'Clearning out my closet', 'Take out trash bins', 'Wash car', 'Tank up the motorcycles', 'Go for flight training'
@@ -37,8 +50,8 @@ export class DefaultComponent {
 
   onToolbarMenuToggle() {
     console.log('On toolbar toggled', this.isMenuOpen);
-    console.log('togglllleeeeeee',this.sideBarOpen);
-    
+    console.log('togglllleeeeeee', this.sideBarOpen);
+
     this.isMenuOpen = !this.sideBarOpen;
 
     if (!this.isMenuOpen) {
@@ -66,7 +79,7 @@ export class DefaultComponent {
     } else {
       this.contentMargin = 240;
     }
-    
+
   }
 
   // switchMode(mode) {

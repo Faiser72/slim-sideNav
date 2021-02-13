@@ -10,6 +10,8 @@ import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "src/app/app-routing.module";
 import { MaterialModule } from "src/app/ng-module";
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SystemadminModule } from 'src/app/modules/systemadmin/systemadmin.module';
+import { DashboardModule } from 'src/app/modules/dashboard/dashboard.module';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppRoutingModule,
     MaterialModule,
     MaterialImportModuleModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SystemadminModule,
+    DashboardModule
   ],
 })
 export class DefaultModule { }

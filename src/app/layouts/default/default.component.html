@@ -25,23 +25,24 @@
         </mat-menu>
     </li>
 </mat-toolbar> -->
-<app-header (toggleSideBarForMe)="sideBarToggler()" (darkModeSwitched)="switchMode($event)"></app-header>
-
+<app-header (toggleSideBarForMe)="sideBarToggler()" (darkModeSwitched)="switchMode($event)" [resultUrl]="data">
+</app-header>
 <mat-sidenav-container id="sidenavContainer" fullscreen>
-    <mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen" opened>
-
+    <mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen"
+        opened>
         <mat-list id="menus">
-            <mat-card>
+
+            <!-- <mat-card class="profile-card">
                 <mat-card-header>
                     <div mat-card-avatar class="avatar"></div>
 
                     <mat-card-title>John Doe</mat-card-title>
                     <mat-card-subtitle>Internal</mat-card-subtitle>
                 </mat-card-header>
-            </mat-card>
-            <mat-list-item class="mt-5">
+            </mat-card> -->
+            <mat-list-item >
                 <button class="menu-item" mat-flat-button>
-                    <mat-icon>dashboard</mat-icon>
+                    <mat-icon >dashboard</mat-icon>
                     Dashboard
                 </button>
             </mat-list-item>
@@ -55,20 +56,41 @@
 
             <mat-list-item>
                 <button class="menu-item" mat-flat-button>
-                    <mat-icon>settings_application</mat-icon>
+                    <mat-icon >settings_application</mat-icon>
                     Settings
                 </button>
             </mat-list-item>
+
+            <mat-list-item (click)="currentUrl(); currentUrlTepm()">
+                <button class="menu-item" mat-flat-button routerLinkActive="list-item-active"
+                    routerLink="/addinstitute">
+                    <mat-icon>settings_application</mat-icon>
+                    Institute
+                </button>
+            </mat-list-item>
+
+            <mat-list-item (click)="currentUrl(); currentUrlTepm()">
+                <button class="menu-item" mat-flat-button routerLinkActive="list-item-active"
+                    routerLink="/addinstituteadmin">
+                    <mat-icon>settings_application</mat-icon>
+                    Institute Admin
+                </button>
+            </mat-list-item>
+            <!-- 
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/addinstitute" (click)="currentUrl(); currentUrlTepm()">
+                <mat-icon color="primary"><i class="fa fa-university" aria-hidden="true"></i></mat-icon>Institute
+              </a> -->
 
         </mat-list>
     </mat-sidenav>
 
     <mat-sidenav-content [ngStyle]="{ 'margin-left.px': contentMargin, 'overflow.hidden': hidden }">
-        <mat-selection-list class="dash-list">
+        <!-- <mat-selection-list class="dash-list">
             <h3>TO DO</h3>
             <mat-list-option *ngFor="let todo of task">
                 {{todo}}
             </mat-list-option>
-        </mat-selection-list>
+        </mat-selection-list> -->
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

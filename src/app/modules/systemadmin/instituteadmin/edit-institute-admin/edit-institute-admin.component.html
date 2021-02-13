@@ -1,0 +1,102 @@
+<br />
+<h4 class="title-header">- Edit Institute Admin -</h4>
+<div class="container-fluid mt-3">
+    <!-- <div class="text-center">
+        <p class="MainTit">Institute Details</p>
+    </div> -->
+    <form action="">
+        <div class="container pt-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <!-- <label for="institute name" class="form-label labelName">Institute Admin Name</label>
+                                <input type="text" class="form-control cusInputField"
+                                    placeholder="Ex: Institute Admin 1"> -->
+                                <mat-form-field class="field-full-width" appearance="outline">
+                                    <mat-label>Institute Admin Name</mat-label>
+                                    <input matInput placeholder="Ex. Institute Admin 1" value="" />
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <!-- <label for="institute name" class="form-label labelName">Phone Number</label>
+                                <input type="text" class="form-control cusInputField" placeholder="Ex: 8867883790"> -->
+                                <mat-form-field class="field-full-width" appearance="outline">
+                                    <mat-label>Phone Number</mat-label>
+                                    <input matInput placeholder="Ex.  8867883790" value="" />
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <!-- <label for="institute name" class="form-label labelName">Institute Admin UserID</label>
+                                <input type="text" class="form-control cusInputField" placeholder="Ex: Admin 1 UserID"> -->
+                                <mat-form-field class="field-full-width" appearance="outline">
+                                    <mat-label>Institute Admin UserID</mat-label>
+                                    <input matInput placeholder="Ex. Admin 1 UserID" value="" />
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <!-- <label for="institute name" class="form-label labelName">Email Address</label>
+                                <input type="text" class="form-control cusInputField"
+                                    placeholder="Ex: instituteadmin1@gmail.com"> -->
+                                <mat-form-field class="field-full-width" appearance="outline">
+                                    <mat-label>Email Address</mat-label>
+                                    <input matInput placeholder="Ex. instituteadmin1@gmail.com" value="" />
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mx-auto">
+                        <div class="hex hex-1 hex-gap mt-5" title="Click Here To Upload">
+                            <div class="inner">
+                                <img src="../../../../../assets/imgs/man.png" alt="">
+                            </div>
+                            <div class="corner-1"></div>
+                            <div class="corner-2"></div>
+                            <input type="file"
+                                style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="institute name" class="form-label labelName">Status</label><br>
+                        <mat-radio-group aria-label="Select an option" color='primary'>
+                            <mat-radio-button value="1" class="radioText">Activate</mat-radio-button>
+                            <mat-radio-button value="2" class="ml-5 radioText">Deactivate</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <button type="button" mat-raised-button color="primary" class=" cusTomBut text-light"
+                        (click)=generatePwd()>Regenerate New Password</button>
+                </div>
+                <div class="col-md-4" *ngIf='isGeneratePassword'>
+                    <!-- <input type="text" class="form-control cusInputField" placeholder="Admin1newPassword"> -->
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <input matInput placeholder="Ex. Admin1newPassword" value="" />
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="text-center pt-5 pb-4">
+                <button type="button" mat-raised-button color="primary" class=" cusTomBut text-light">Save
+                    Changes</button>
+            </div>
+        </div>
+    </form>
+</div>

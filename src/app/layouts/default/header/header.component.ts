@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Inject } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter, Inject, Input } from "@angular/core";
 import { Router } from "@angular/router";
 import { MatSlideToggleChange, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 
@@ -20,8 +20,12 @@ export class HeaderComponent implements OnInit {
   @Output()
   readonly darkModeSwitched = new EventEmitter<boolean>();
 
+  @Input() public resultUrl: any;
+
   constructor(private router: Router,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog) { 
+      console.log(this.resultUrl);
+    }
 
   onDarkModeSwitched({ checked }: MatSlideToggleChange) {
     this.darkModeSwitched.emit(checked);
@@ -67,6 +71,91 @@ export class HeaderComponent implements OnInit {
   //     location.reload();
   //   }
   // }
+
+   // institute routing starts here
+
+   routeToAddInstitute() {
+    this.router.navigate(['/addinstitute']);
+  }
+
+  routeToDraftInstitute() {
+    this.router.navigate(['/draftinstitute']);
+  }
+
+  routeToViewInstitute() {
+    this.router.navigate(['/viewinstitute']);
+
+  }
+
+  routeToManageInstitute() {
+    this.router.navigate(['/manageinstitute']);
+  }
+  // institute routing starts here
+
+  // instituteAdmin routing starts here
+
+  routeToAddInstituteAdmin() {
+    this.router.navigate(['/home/addinstituteadmin']);
+  }
+
+  routeToViewInstituteAdmin() {
+    this.router.navigate(['/home/viewinstituteadmin']);
+
+  }
+
+  routeToManageInstituteAdmin() {
+    this.router.navigate(['/manageinstituteadmin']);
+  }
+  // instituteAdmin routing ends here
+
+
+  // Teacher routing starts here
+
+  routeToAddTeacher() {
+    this.router.navigate(['/home/addteacher']);
+  }
+
+  routeToViewTeacher() {
+    this.router.navigate(['/home/viewteacher']);
+
+  }
+
+  routeToManageTeacher() {
+    this.router.navigate(['/home/manageteacher']);
+  }
+  // Teacher routing ends here
+
+  // Students routing starts here
+
+  routeToAddStudent() {
+    this.router.navigate(['/home/addstudent']);
+  }
+
+  routeToViewStudent() {
+    this.router.navigate(['/home/viewstudent']);
+
+  }
+
+  routeToManageStudent() {
+    this.router.navigate(['/home/managestudent']);
+  }
+  // Student routing ends here
+
+  // Keys routing starts here
+
+  routeToAddKeys() {
+    this.router.navigate(['/home/addkeys']);
+  }
+
+  routeToViewKeys() {
+    this.router.navigate(['/home/viewkeys']);
+
+  }
+
+  routeToManageKeys() {
+    this.router.navigate(['/home/managekeys']);
+  }
+  // Keys routing ends here
 
 
 

@@ -1,0 +1,84 @@
+<br />
+<h5 class="title-header">INISTITUTES</h5>
+<div class="container-fluid">
+    <!-- <div class="row d-flex justify-content-around w-100 mx-auto">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="row d-flex justify-content-around w-100 mx-auto">
+                <div class="col">
+                    <p class="mb-2 text-left main-bg-2">Drafts</p>
+                </div>
+            </div>
+            <div class="example-container">
+                <table mat-table [dataSource]="dataSource">
+
+                    <ng-container matColumnDef="draftDate">
+                        <th mat-header-cell *matHeaderCellDef> Draft Date </th>
+                        <td mat-cell *matCellDef="let element"> {{element.draftDate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="noMissingKey">
+                        <th mat-header-cell *matHeaderCellDef> No. Missing Key Fields </th>
+                        <td mat-cell *matCellDef="let element"> {{element.noMissingKey}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="status">
+                        <th mat-header-cell *matHeaderCellDef> Status </th>
+                        <td mat-cell *matCellDef="let element; let i=index">
+                            <input type="checkbox" checked id="toggle-two{{i}}" class="toggle">
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </div>
+    </div> -->
+    <div class="row w-100 float-right d-flex justify-content-right mt-3 mb-3">
+        <div class="col-lg-9 col-md-6 col-sm-12 float-right">
+        </div>
+        <div class="col-lg-1 col-md-3 col-sm-12 float-right">
+            <button type="button" mat-raised-button class="main-bg">PRINT</button>
+        </div>
+        <div class="col-lg-1 col-md-3 col-sm-12 float-right">
+            <button type="button" mat-raised-button color="primary" class="text-light">EXPORT</button>
+        </div>
+    </div>
+    <div>
+        <table mat-table [dataSource]="data" class="mat-elevation-z8">
+            <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+                <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+                <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+    </div>
+    <div class="mb-3 mt-2">
+        <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal"
+            (cdkDropListDropped)="drop($event)" color="primary">
+            <mat-chip class="example-box" color="accent" selected cdkDrag *ngFor="let column of displayedColumns"
+                (click)="addColumn(column)">
+                {{column}}
+            </mat-chip>
+        </mat-chip-list>
+    </div>
+
+    <div>
+        <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal"
+            (cdkDropListDropped)="drop($event)" color="primary">
+            <mat-chip class="example-box" color="primary" selected cdkDrag *ngFor="let column of displayedColumns"
+                [removable]="removable" (removed)="remove(column)" (click)='remove(column)'>
+                {{column}}
+                <mat-icon color='accent'>cancel</mat-icon>
+            </mat-chip>
+        </mat-chip-list>
+    </div>
+</div>

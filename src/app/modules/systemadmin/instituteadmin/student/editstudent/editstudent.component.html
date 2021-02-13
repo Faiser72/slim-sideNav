@@ -1,0 +1,192 @@
+<div class="container-fluid mt-2 p-0">
+    <div class=" ">
+        <div class="card-title">
+            <h4 class="text-center main-bg pt-2 mt-1">- Student Details -</h4>
+        </div>
+        <!-- <mat-divider class="mx-5"></mat-divider> -->
+        <form action="" class="form-group customhover mt-3" [formGroup]="editStudentDetailsForm"
+            (ngSubmit)="editStudentDetailsFormSubmit()">
+            <div class="row d-flex justify-content-around mt-4">
+                <div class="col-lg-8 col-sm-12 col-md-6">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <mat-form-field class="field-full-width" appearance="outline">
+                                <mat-label>Name<sup class="text-danger">*</sup></mat-label>
+                                <input matInput placeholder="Ex. Kiran Kumar Kumawat" value="" formControlName="name" />
+                            </mat-form-field>
+                            <p style="color: red;"
+                                *ngIf="editStudentDetailsForm.get('name') && editStudentDetailsForm.get('name').touched && editStudentDetailsForm.get('name').invalid">
+                                Please enter this field</p>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <mat-form-field class="field-full-width" appearance="outline">
+                                <mat-label>Phone Number <sup class="text-danger">*</sup></mat-label>
+                                <span matPrefix>+91 &nbsp;</span>
+                                <input type="tel" matInput placeholder="555-555-1234" formControlName="phoneNumber">
+                                <mat-icon matSuffix color="accent">phone</mat-icon>
+                            </mat-form-field>
+                            <p style="color: red;"
+                                *ngIf="editStudentDetailsForm.get('phoneNumber') && editStudentDetailsForm.get('phoneNumber').touched && editStudentDetailsForm.get('phoneNumber').invalid">
+                                Please enter a valid phone number</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <mat-form-field class="field-full-width" appearance="outline">
+                                <mat-label>Date Of Birth <sup class="text-danger">*</sup></mat-label>
+                                <input matInput [matDatepicker]="picker" placeholder="Ex. 12/30/1998" value="" #dob
+                                    (dateChange)='ageFromDateOfBirth($event)' formControlName="dob" [max]="minDate" />
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                            <p style="color: red;"
+                                *ngIf="editStudentDetailsForm.get('dob') && editStudentDetailsForm.get('dob').touched && editStudentDetailsForm.get('dob').invalid">
+                                Please select photo</p>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <mat-form-field class="field-full-width" appearance="outline">
+                                <mat-label>Joining Date <sup class="text-danger">*</sup></mat-label>
+                                <input matInput [matDatepicker]="jdate" placeholder="Ex. 12/30/2010" value=""
+                                    formControlName="joiningDate" />
+                                <mat-datepicker-toggle matSuffix [for]="jdate"></mat-datepicker-toggle>
+                                <mat-datepicker #jdate></mat-datepicker>
+                            </mat-form-field>
+                            <p style="color: red;"
+                                *ngIf="editStudentDetailsForm.get('joiningDate') && editStudentDetailsForm.get('joiningDate').touched && editStudentDetailsForm.get('joiningDate').invalid">
+                                Please enter this field</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <mat-form-field class="field-full-width" appearance="outline">
+                                <mat-label>Email Id <sup class="text-danger">*</sup></mat-label>
+                                <input matInput type="email" placeholder="Ex. student@gmail.com" value=""
+                                    formControlName="emailId" />
+                                <mat-icon matSuffix color="accent">email</mat-icon>
+                            </mat-form-field>
+                            <p style="color: red;"
+                                *ngIf="editStudentDetailsForm.get('emailId') && editStudentDetailsForm.get('emailId').touched && editStudentDetailsForm.get('emailId').invalid">
+                                Please eneter valid email id</p>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <mat-form-field class="field-full-width" appearance="outline">
+                                <mat-label>Subject<sup class="text-danger">*</sup></mat-label>
+                                <input matInput placeholder="Ex.Hindi,English" value="" formControlName="subject" />
+                            </mat-form-field>
+                            <p style="color: red;"
+                                *ngIf="editStudentDetailsForm.get('subject') && editStudentDetailsForm.get('subject').touched && editStudentDetailsForm.get('subject').invalid">
+                                Please enter this field</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <mat-form-field class="field-full-width" appearance="outline">
+                                <mat-label>Class<sup class="text-danger">*</sup></mat-label>
+                                <input matInput placeholder="Ex.10th" value="" formControlName="class" />
+                            </mat-form-field>
+                            <p style="color: red;"
+                                *ngIf="editStudentDetailsForm.get('class') && editStudentDetailsForm.get('class').touched && editStudentDetailsForm.get('class').invalid">
+                                Please Enter this field</p>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <mat-form-field class="field-full-width" appearance="outline">
+                                <mat-label>Student User Id<sup class="text-danger">*</sup></mat-label>
+                                <input matInput placeholder="Ex. StudentID0001" value="" formControlName="studentUserId" />
+                            </mat-form-field>
+                            <p style="color: red;"
+                                *ngIf="editStudentDetailsForm.get('studentUserId') && editStudentDetailsForm.get('studentUserId').touched && editStudentDetailsForm.get('studentUserId').invalid">
+                                Please enter this field</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <mat-form-field class="field-full-width" appearance="outline">
+                                <mat-label>Roll No<sup class="text-danger">*</sup></mat-label>
+                                <input matInput placeholder="Ex. 12ME71" value="" formControlName="rollNo" />
+                            </mat-form-field>
+                            <p style="color: red;"
+                                *ngIf="editStudentDetailsForm.get('rollNo') && editStudentDetailsForm.get('rollNo').touched && editStudentDetailsForm.get('rollNo').invalid">
+                                Please enter this field</p>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <mat-form-field class="field-full-width" appearance="outline">
+                                <mat-label>Class Teacher<sup class="text-danger">*</sup></mat-label>
+                                <input matInput placeholder="Ex. Maaz Shaikh" value="" formControlName="classTeacher" />
+                            </mat-form-field>
+                            <p style="color: red;"
+                                *ngIf="editStudentDetailsForm.get('classTeacher') && editStudentDetailsForm.get('classTeacher').touched && editStudentDetailsForm.get('classTeacher').invalid">
+                                Please enter this field</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-12 col-md-6 ">
+                    <div class="ml-5 mt-5">
+                        <div class="hex hex-1 hex-gap mt-5" title="Click Here To Upload">
+                            <div class="inner">
+                                <img src="../../../../../assets/imgs/man.png" alt="">
+                            </div>
+                            <div class="circle-img text-center ">
+                                <mat-icon color="accent" class="mt-1 mr-2">camera_enhance</mat-icon>
+                                <input type="file"
+                                    style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;" />
+                            </div>
+                            <div class="corner-1"></div>
+                            <div class="corner-2"></div>
+
+                        </div>
+                    </div>
+                    <p style="color: red;"
+                        *ngIf="editStudentDetailsForm.get('avatar') && editStudentDetailsForm.get('avatar').touched && editStudentDetailsForm.get('avatar').invalid">
+                        Please enter this field</p>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-around">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <mat-label>Area Of Interest</mat-label>
+                        <textarea matInput placeholder="Type Your area of interest here"
+                            formControlName="areaOfInterest"></textarea>
+                    </mat-form-field>
+                    <p style="color: red;"
+                        *ngIf="editStudentDetailsForm.get('areaOfInterest') && editStudentDetailsForm.get('areaOfInterest').touched && editStudentDetailsForm.get('areaOfInterest').invalid">
+                        Please enter this field</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9 col-md-6 col-sm-12 ">
+                    <mat-radio-group aria-label="Select an option" class="ml-4" color='primary'>
+                        <mat-radio-button value="1">Activate</mat-radio-button>
+                        <mat-radio-button value="2">Deactivate</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12 text-right">
+                    <button type="button" class="text-light btns" mat-raised-button color="primary">
+                        Save Changes
+                    </button>
+                </div>
+            </div>
+            <!-- <h6 class="text-left mt-2"><span class="text-danger">*</span> Mandatory Field </h6> -->
+
+            <div class="row mt-3">
+                <div class="col d-flex justify-content-around">
+                    <button type="button" class="btns " mat-stroked-button color="primary">
+                        Regenerate Password
+                    </button>
+                    <button type="button" class="btns" mat-stroked-button color="primary">
+                        Teacher New Password
+                    </button>
+                </div>
+                <div class="col">
+
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>
