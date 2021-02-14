@@ -17,12 +17,12 @@ import { DashboardModule } from 'src/app/modules/dashboard/dashboard.module';
 @NgModule({
   declarations: [
     DefaultComponent,
-    HeaderComponent 
-  
+    HeaderComponent
+
   ],
   imports: [
     CommonModule,
-    RouterModule, 
+    RouterModule,
     ReactiveFormsModule,
     FormsModule,
     NoopAnimationsModule,

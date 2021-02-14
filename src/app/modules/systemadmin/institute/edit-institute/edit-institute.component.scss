@@ -1,243 +1,7 @@
-.MainTit {
-    font-size: 25px;
-}
-
-.labelName {
-    font-weight: 500;
-}
-
-.cusInputField {
-    border    : 1px solid black;
-    box-shadow: none;
-}
-
-.addrssField {
-    margin-top: 32px;
-}
-
-.cusTomBut {
-    background-color: #949597;
-    color           : white;
-    width: 140px;
-}
-
-
-.radioText {
-    font-weight: 500;
-}
-
-// for hexagon sgtarts here
-//  SASS/COMPASS CSS OUTPUT:
-.hex {
-    width                  : 180px;
-    height                 : 103.9231px;
-    background-color       : white;
-    background-repeat      : no-repeat;
-    background-position    : 50% 50%;
-    -webkit-background-size: auto 126.0px;
-    -moz-background-size   : auto 126.0px;
-    -o-background-size     : auto 126.0px;
-    background-size        : auto 126.0px;
-    position               : relative;
-    float                  : left;
-    margin-top             : 36.24px;
-    //   margin-right: 6px;
-    margin-bottom          : 36.24px;
-    //   margin-left: 6px;
-    text-align             : center;
-    zoom                   : 1;
-    border-right           : 1px solid rgb(61, 41, 240);
-    ;
-    border-left: 1px solid rgb(61, 41, 240);
-    ;
-}
-
-.hex.hex-gap {
-    margin-left: 20px;
-}
-
-.hex:hover {
-    cursor                 : pointer;
-    //   opacity: 0.5;
-    //   -webkit-box-shadow: red 2px 2px 10px;
-    //   -moz-box-shadow: red 2px 2px 10px;
-    //   box-shadow: red 2px 2px 10px;
-}
-
-.hex a {
-    //   display: block;
-    width      : 100%;
-    height     : 100%;
-    text-indent: -9999em;
-    position   : absolute;
-    top        : 0;
-    left       : 0;
-}
-
-.hex .corner-1,
-.hex .corner-2 {
-    position                   : absolute;
-    top                        : 0;
-    left                       : 0;
-    width                      : 100%;
-    height                     : 100%;
-    background                 : inherit;
-    z-index                    : -2;
-    border-right               : 1px solid rgb(65, 52, 241);
-    border-left                : 1px solid rgb(61, 41, 240);
-    overflow                   : hidden;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility   : hidden;
-    -ms-backface-visibility    : hidden;
-    -o-backface-visibility     : hidden;
-    backface-visibility        : hidden;
-}
-
-.hex .corner-1:before,
-.hex .corner-2:before {
-    width                      : 207.6px;
-    height                     : 207.6px;
-    content                    : '';
-    position                   : absolute;
-    background                 : inherit;
-    top                        : 0;
-    left                       : 0;
-    z-index                    : 1;
-    background                 : inherit;
-    background-repeat          : no-repeat;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility   : hidden;
-    -ms-backface-visibility    : hidden;
-    -o-backface-visibility     : hidden;
-    backface-visibility        : hidden;
-}
-
-.hex .corner-1 {
-    z-index          : -1;
-    -webkit-transform: rotate(60deg);
-    -moz-transform   : rotate(60deg);
-    -ms-transform    : rotate(60deg);
-    -o-transform     : rotate(60deg);
-    transform        : rotate(60deg);
-}
-
-.hex .corner-1:before {
-    -webkit-transform       : rotate(-60deg) translate(-103.9231px, 0px);
-    -moz-transform          : rotate(-60deg) translate(-103.9231px, 0px);
-    -ms-transform           : rotate(-60deg) translate(-103.9231px, 0px);
-    -o-transform            : rotate(-60deg) translate(-103.9231px, 0px);
-    transform               : rotate(-60deg) translate(-103.9231px, 0px);
-    -webkit-transform-origin: 0 0;
-    -moz-transform-origin   : 0 0;
-    -ms-transform-origin    : 0 0;
-    -o-transform-origin     : 0 0;
-    transform-origin        : 0 0;
-}
-
-.hex .corner-2 {
-    -webkit-transform: rotate(-60deg);
-    -moz-transform   : rotate(-60deg);
-    -ms-transform    : rotate(-60deg);
-    -o-transform     : rotate(-60deg);
-    transform        : rotate(-60deg);
-}
-
-.hex .corner-2:before {
-    -webkit-transform: rotate(60deg) translate(-51.96155px, -14px);
-    -moz-transform   : rotate(60deg) translate(-51.96155px, -14px);
-    -ms-transform    : rotate(60deg) translate(-51.96155px, -14px);
-    -o-transform     : rotate(60deg) translate(-51.96155px, -14px);
-    transform        : rotate(60deg) translate(-51.96155px, -14px);
-    bottom           : 0;
-}
-
-.hex .inner {
-    color: #333;
-}
-
-.hex h4 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size  : 1.44em;
-    margin     : 0;
-}
-
-.hex hr {
-    width     : 60%;
-    border    : 0;
-    border-top: 3px solid #eee;
-    margin    : 12px auto;
-}
-
-.hex p {
-    font-size  : 1.2em;
-    font-family: 'Kotta One', serif;
-    width      : 80%;
-    margin     : 0 auto;
-}
-
-.hex.hex-1 {
-    background: rgb(238, 81, 134);
-}
-
-.hex.hex-2 {
-    background: #f5c53c;
-}
-
-.hex.hex-3 {
-    background: #80b971;
-}
-
-.circle-img {
-    height             : 4rem;
-    width              : 4rem;
-    background-color   : rgb(61, 41, 240);
-    border             : rgb(238, 81, 134) solid 2px;
-    /* background-image: url('../ownExam/assets/images.jpg'); */
-    text-align         : center;
-    border-radius      : 50%;
-    shape-outside      : circle();
-    clip-path          : circle();
-    overflow           : hidden;
-    margin-left        : 115px;
-}
-
-.bg-pink {
-    background-color: rgb(238, 81, 134);
-}
-
-.border-blue {
-    border: rgb(61, 41, 240) solid 2px;
-}
-
-div .circle-img {
-    position: absolute;
-    /* top  : -120; */
-    top     : -80px;
-    left    : -55px;
-}
-
-.inli {
-    display: inline;
-}
-
-.inli-2 {
-    display: inline;
-}
-
-.rows-2 {
-    margin-top: 300px;
-}
-
-.hex img {
-    max-width: 5rem;
-}
-
-// for hexagon ends here
-
 .field-full-width {
-    width: 100%;
-    margin-top: -15px;
-
+    width        : 100%;
+    // margin-top: -8px;
+    font-size    : 12px;
 }
 
 .main-bg {
@@ -250,5 +14,25 @@ div .circle-img {
 
 .title-header {
     text-align: center;
-    color: var(--main-font-4-color);
+    color     : var(--main-font-3-color);
 }
+
+button {
+    width: 5rem;
+}
+
+// for upload
+// .upload-photo {
+//     border-radius   : 4px;
+//     padding         : 5px 40px 5px 40px;
+//     background-color: var(--main-bg-2-color);
+//     color           : var(--main-font-1-color);
+//     outline         : 0;
+//     border:solid 2px;
+//     border-color: var(--main-font-3-color) !important;
+
+// }
+
+.profile-holder:hover {
+    cursor: pointer;
+ }

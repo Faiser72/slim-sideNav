@@ -2,12 +2,23 @@
     border-radius: 0px;
 }
 
+
+
 .main-bg {
-    color: var(--main-font-4-color);
+    color: var(--main-font-3-color);
 }
 
 .main-bg-2 {
     color: var(--main-font-3-color);
+}
+
+.title-header {
+    text-align: center;
+    color     : var(--main-font-3-color);
+}
+
+button {
+    width: 5rem;
 }
 
 .card {
@@ -17,21 +28,23 @@
 .example-form {
     min-width: 150px;
     max-width: 500px;
-    width: 100%;
+    font-size: 12px;
+    width    : 100%;
 }
 
 .field-full-width {
-    width: 100%;
-    margin-top: -15px;
+    width        : 100%;
+    font-size    : 12px;
+    // margin-top: -15px;
 }
 
 .upload-photo,
 .reset-btn {
-    border-radius: 4px;
-    padding: 5px 40px 5px 40px;
+    border-radius   : 4px;
+    padding         : 5px 40px 5px 40px;
     background-color: var(--main-bg-2-color);
-    color: var(--main-font-1-color);
-    outline: 0;
+    color           : var(--main-font-1-color);
+    outline         : 0;
 }
 
 .profile-holder:hover {
@@ -48,7 +61,7 @@ mat-datepicker-toggle {
 
 .time {
     // padding: 5px 0;
-    font-size: 1.5em;
+    font-size   : 1.5em;
     padding-left: 50%;
     // width: 100px;
 }
@@ -57,267 +70,206 @@ button {
     outline: none !important;
 }
 
-// for hexagon sgtarts here
-//  SASS/COMPASS CSS OUTPUT:
-.hex {
-    width: 180px;
-    height: 103.9231px;
-    background-color: white;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    -webkit-background-size: auto 126.0px;
-    -moz-background-size: auto 126.0px;
-    -o-background-size: auto 126.0px;
-    background-size: auto 126.0px;
-    position: relative;
-    float: left;
-    margin-top: 36.24px;
-    //   margin-right: 6px;
-    margin-bottom: 36.24px;
-    //   margin-left: 6px;
-    text-align: center;
-    zoom: 1;
-    border-right: 1px solid rgb(61, 41, 240);
-    ;
-    border-left: 1px solid rgb(61, 41, 240);
-    ;
-}
 
-.hex.hex-gap {
-    margin-left: 20px;
-}
-
-.hex:hover {
-    cursor: pointer;
-    //   opacity: 0.5;
-    //   -webkit-box-shadow: red 2px 2px 10px;
-    //   -moz-box-shadow: red 2px 2px 10px;
-    //   box-shadow: red 2px 2px 10px;
-}
-
-.hex a {
-    //   display: block;
-    width: 100%;
-    height: 100%;
-    text-indent: -9999em;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.hex .corner-1,
-.hex .corner-2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: inherit;
-    z-index: -2;
-    border-right: 1px solid rgb(65, 52, 241);
-    border-left: 1px solid rgb(61, 41, 240);
-    overflow: hidden;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.hex .corner-1:before,
-.hex .corner-2:before {
-    width: 207.6px;
-    height: 207.6px;
-    content: '';
-    position: absolute;
-    background: inherit;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background: inherit;
-    background-repeat: no-repeat;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-.hex .corner-1 {
-    z-index: -1;
-    -webkit-transform: rotate(60deg);
-    -moz-transform: rotate(60deg);
-    -ms-transform: rotate(60deg);
-    -o-transform: rotate(60deg);
-    transform: rotate(60deg);
-}
-
-.hex .corner-1:before {
-    -webkit-transform: rotate(-60deg) translate(-103.9231px, 0px);
-    -moz-transform: rotate(-60deg) translate(-103.9231px, 0px);
-    -ms-transform: rotate(-60deg) translate(-103.9231px, 0px);
-    -o-transform: rotate(-60deg) translate(-103.9231px, 0px);
-    transform: rotate(-60deg) translate(-103.9231px, 0px);
-    -webkit-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    -ms-transform-origin: 0 0;
-    -o-transform-origin: 0 0;
-    transform-origin: 0 0;
-}
-
-.hex .corner-2 {
-    -webkit-transform: rotate(-60deg);
-    -moz-transform: rotate(-60deg);
-    -ms-transform: rotate(-60deg);
-    -o-transform: rotate(-60deg);
-    transform: rotate(-60deg);
-}
-
-.hex .corner-2:before {
-    -webkit-transform: rotate(60deg) translate(-51.96155px, -14px);
-    -moz-transform: rotate(60deg) translate(-51.96155px, -14px);
-    -ms-transform: rotate(60deg) translate(-51.96155px, -14px);
-    -o-transform: rotate(60deg) translate(-51.96155px, -14px);
-    transform: rotate(60deg) translate(-51.96155px, -14px);
-    bottom: 0;
-}
-
-.hex .inner {
-    color: #333;
-}
-
-.hex h4 {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.44em;
-    margin: 0;
-}
-
-.hex hr {
-    width: 60%;
-    border: 0;
-    border-top: 3px solid #eee;
-    margin: 12px auto;
-}
-
-.hex p {
-    font-size: 1.2em;
-    font-family: 'Kotta One', serif;
-    width: 80%;
-    margin: 0 auto;
-}
-
-.hex.hex-1 {
-    background: rgb(238, 81, 134);
-}
-
-.hex.hex-2 {
-    background: #f5c53c;
-}
-
-.hex.hex-3 {
-    background: #80b971;
-}
-
-.circle-img {
-    height: 3rem;
-    width: 3rem;
-    background-color: rgb(61, 41, 240);
-    border: rgb(238, 81, 134) solid 2px;
-    /* background-image: url('../ownExam/assets/images.jpg'); */
-    text-align: center;
-    border-radius: 50%;
-    shape-outside: circle();
-    clip-path: circle();
-    overflow: hidden;
-    margin-left: 115px;
-}
-
-.bg-pink {
-    background-color: rgb(238, 81, 134);
-}
-
-.border-blue {
-    border: rgb(61, 41, 240) solid 2px;
-}
-
-div .circle-img {
-    position: absolute;
-    /* top     : -120; */
-    // top     : -0px;
-    left: -130px;
-    margin-top: -8px;
-}
-
-.inli {
-    display: inline;
-}
-
-.inli-2 {
-    display: inline;
-}
-
-.rows-2 {
-    margin-top: 300px;
-}
-
-.hex img {
-    max-width: 5rem;
-}
-
-mat-icon {
-    font-size: 2rem;
-}
-
-// for hexagon ends here
 // Drag And Drop CSS Starts here
 .dropzone {
-    min-height: 150px;
+    min-height      : 150px;
     // min-width: 400px;
-    display: table;
-    width: 100%;
+    display         : table;
+    width           : 100%;
     background-color: #eee;
-    border: solid 1px;
-    border-color: var(--main-font-4-color);
+    border          : solid 1px;
+    border-color    : var(--main-font-4-color);
     ;
 }
 
 .text-wrapper {
-    display: table-cell;
+    display       : table-cell;
     vertical-align: middle;
 }
 
 .centered {
     // font-family: sans-serif;
-    font-size: 1.3em;
+    font-size  : 1.3em;
     font-weight: bold;
-    text-align: center;
+    text-align : center;
 }
 
 // Drag And Drop CSS ends here
 .labelCust {
     font-weight: 500;
-    font-size: 15px;
+    font-size  : 15px;
 }
 
 .customCardForKey {
-    width: 53%;
+    width        : 53%;
     border-radius: 10%;
-    border: 1px solid black;
+    border       : 1px solid black;
 }
 
 .keyImg {
     width: 90%;
 }
 
-p{
-    font-size: 10px;
+p {
+    font-size : 10px;
     margin-top: -14px;
 }
 
-.blue{
+.blue {
     color: var(--main-font-3-color);
 }
 
-.pink{
+.pink {
     color: var(--main-font-4-color);
+}
+
+
+// For Image DragAnd drop Starts here
+.container {
+    width     : 750px;
+    height    : 250px;
+    padding   : 2rem;
+    text-align: center;
+    border    : dashed 1px #979797;
+    position  : relative;
+    margin    : 0 auto;
+
+    input {
+        opacity : 0;
+        position: absolute;
+        z-index : 2;
+        width   : 100%;
+        height  : 100%;
+        top     : 0;
+        left    : 0;
+    }
+
+    label {
+        color           : white;
+        width           : 183px;
+        height          : 44px;
+        border-radius   : 21.5px;
+        background-color: var(--main-font-3-color);
+        padding         : 8px 16px;
+    }
+
+    h3 {
+        font-size  : 20px;
+        font-weight: 600;
+        color      : var(--main-font-4-color);
+    }
+}
+
+.fileover {
+    animation                : shake 1s;
+    animation-iteration-count: infinite;
+}
+
+.files-list {
+    margin-top: 1.5rem;
+
+    .single-file {
+        display        : flex;
+        padding        : 0.5rem;
+        justify-content: space-between;
+        align-items    : center;
+        border         : dashed 1px #979797;
+        margin-bottom  : 1rem;
+
+        .delete {
+            display    : flex;
+            margin-left: 0.5rem;
+            cursor     : pointer;
+            align-self : flex-end;
+        }
+
+        display  : flex;
+        flex-grow: 1;
+
+        .name {
+            font-size  : 14px;
+            font-weight: 500;
+            color      : var(--main-font-4-color);
+            margin     : 0;
+        }
+
+        .size {
+            font-size    : 12px;
+            font-weight  : 500;
+            color        : #a4a4a4;
+            margin       : 0;
+            margin-bottom: 0.25rem;
+        }
+
+        .info {
+            width: 100%
+        }
+    }
+}
+
+
+/* Shake animation */
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+//   For Image Drap aNd Drop ends here
+
+.keyImg {
+    width: 50%;
+}
+
+.customCardForKey {
+    width: 33%;
+    border-radius: 10%;
+    border: 1px solid black;
+}
+
+.labelCust {
+    font-weight: 500;
+    font-size: 15px;
 }

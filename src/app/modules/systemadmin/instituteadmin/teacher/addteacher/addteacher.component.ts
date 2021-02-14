@@ -24,61 +24,62 @@ export class AddteacherComponent implements OnInit {
   userId:any="userId123";
   password:any="pass@123"
 
-  // filesDropped(files: FileHandle[]): void {
-  //   this.files = files;
-  // }
+// upload starts here
+   // fileUploads
+   uploadFiles = new FormData();
+   photoFile: FileList;
+   resumeFile: FileList;
+   resumecvFile: string | Blob;
+   ppFile: string | Blob;
+   placeholder_path: string;
+   resumeFileName: string;
+   doctorPhotoName: string;
+   photoMessage: string;
+   resumeMessage: string;
+   doctorRoleList: any;
+  isShowPic: boolean=false;
+  //  upload ends here
 
-  constructor(private fb: FormBuilder,
-    private appComponent: AppComponent,
-    private router: Router,
-    private _snackBar: MatSnackBar,
-  ) {
-    // for date validation starts
-    var minCurrentDate = new Date();
-    var maxNewDate = new Date();
-    this.minDate = minCurrentDate;
-    this.maxDate = maxNewDate.setMonth(maxNewDate.getMonth() + 1);
-    // for date validation ends
+  constructor() { 
+    this.placeholder_path = "../../../../assets/Placeholder.jpg";
+  }
+
+  showUpload(){
+    this.isShowPic=true;
+  }
+
+
+  getPhotoFile(photoUpload: HTMLInputElement, event: any) {
+    const fileName = event.target.files[0].name;
+    this.photoFile = photoUpload.files;
+
+    if (this.photoFile.length === 0) return;
+
+    let mimeType = this.photoFile[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.placeholder_path = "../../../../assets/Placeholder.jpg";
+      this.photoMessage = "Only image files are supported.";
+      this.doctorPhotoName = "No File Chosen";
+      return;
+    } else {
+      let reader = new FileReader();
+      reader.readAsDataURL(this.photoFile[0]);
+      reader.onload = (_event) => {
+        this.placeholder_path = reader.result as string;
+        this.doctorPhotoName = fileName;
+      };
+      this.photoMessage = null;
+      this.ppFile = event.target.files[0];
+    }
   }
 
   ngOnInit() {
-    this.addTeacherDetailsFormBuilder();
   }
 
   ageFromDateOfBirth(dob){
     
   }
 
-  addTeacherDetailsFormBuilder() {
-    this.addTeacherDetailsForm = this.fb.group({
-      name: [null, [Validators.required, Validators.minLength(3)]],
-      qualification: [null, [Validators.required]],
-      subject: [null, [Validators.required]],
-      avatar: [null],
-      dob: [
-        null,
-        [
-          Validators.required
-        ],
-      ],
-      teachingSince: [null, [Validators.required]],
-      emailId: [
-        null,
-        Validators.compose([
-          Validators.required,
-          Validators.pattern("^[a-zA-Z0-9._-]+@[a-zA-Z]+.[a-zA-Z]{2,4}$"),
-        ]),
-      ],
-      teacherUserId: [null, [Validators.required]],
-      experience: [null],
-      joiningDate: [null, [Validators.required]],
-      phoneNumber: [
-        null,
-        [Validators.required, Validators.pattern(this.phonePattern)],
-      ],
-
-    });
-  }
 
   addTeacherDetailsFormSubmit() {
 

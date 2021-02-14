@@ -4,7 +4,9 @@
         <button mat-icon-button (click)="toggleSideBar()">
             <mat-icon color='primary'>menu</mat-icon>
         </button>
-        <span class="main-bg">MY AWESOME APP</span>
+        <!-- <span class="main-bg">MY AWESOME APP</span> -->
+        <span><img src="../../../../assets/wesiteImages/logo/Examowl logo full.png" alt=""
+            style="max-width: 7rem;"></span>
 
         <!-- <header 
         class="flex-container"
@@ -16,29 +18,60 @@
       </header> -->
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" class="align-middle" style="margin-top: 20px  !important;">
             <div fxFlex="70" class=" mt-2" fxLayoutGap="30px" [style.margin-left]="'30px'">
-                
+
                 <span class="mt-3" *ngIf="resultUrl=='/addinstitute'">
                     <ul id="menu">
                         <li (click)="routeToAddInstitute()">Add</li>
+                        <li (click)="routeToUploadInstitute()">Upload</li>
                         <li (click)='routeToDraftInstitute()'>Draft</li>
-                        <li (click)="routeToViewInstitute()">View</li>
-                        <li (click)="routeToManageInstitute()">Manage</li>
-                        <li>institute</li>
+                        <li (click)="routeToManageInstitute()">View</li>
+                        <!-- <li (click)="routeToManageInstitute()">Manage</li> -->
+                        <!-- <li>institute</li> -->
                     </ul>
                 </span>
 
                 <span class="mt-3" *ngIf="resultUrl=='/addinstituteadmin'">
                     <ul id="menu">
                         <li (click)="routeToAddInstituteAdmin()">Add</li>
+                        <li (click)="routeToUploadInstituteAdmin()">Upload</li>
                         <li (click)="routeToViewInstituteAdmin()">View</li>
                         <li (click)="routeToManageInstituteAdmin()">Manage</li>
-                        <li>instituteAdmin</li>
+                    </ul>
+                </span>
+
+                <span class="mt-3" *ngIf="resultUrl=='/addteacher'">
+                    <ul id="menu">
+                        <li (click)="routeToAddTeacher()">Add</li>
+                        <li (click)="routeToUploadTeacher()">Upload</li>
+                        <li (click)="routeToDraftTeacher()">Draft</li>
+                        <li (click)="routeToViewTeacher()">View</li>
+                        <li (click)="routeToManageTeacher()">Manage</li>
+                        <!-- <li>teacher</li> -->
+                    </ul>
+                </span>
+                <span class="mt-3" *ngIf="resultUrl=='/addstudent'">
+                    <ul id="menu">
+                        <li (click)="routeToAddStudent()">Add</li>
+                        <li (click)="routeToUploadStudent()">Upload</li>
+                        <li (click)="routeToDraftStudent()">Draft</li>
+                        <li (click)="routeToViewStudent()">View</li>
+                        <li (click)="routeToManageStudent()">Manage</li>
+                        <!-- <li>student</li> -->
+                    </ul>
+                </span>
+                <span class="mt-3" *ngIf="resultUrl=='/addkeys'">
+                    <ul id="menu">
+                        <li (click)="routeToAddKeys()">Add</li>
+                        <li (click)="routeToUploadKeys()">Upload</li>
+                        <li (click)="routeToViewKeys()">View</li>
+                        <li (click)="routeToManageKeys()">Manage</li>
+                        <!-- <li>keys</li> -->
                     </ul>
                 </span>
 
             </div>
             <div fxFlex="30" class="" fxLayoutAlign="center end" fxHide.lt-md>
-                <mat-form-field appearance="outline" class="searchBar">
+                <mat-form-field appearance="outline" class="searchBar text-dark">
                     <input matInput placeholder="Search Here">
                     <mat-icon matSuffix color='primary'>search</mat-icon>
                 </mat-form-field>

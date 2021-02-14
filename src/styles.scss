@@ -2,12 +2,12 @@
 
 body {
     font-family: Roboto, Arial, sans-serif;
-    padding: 0;
-    margin: 0;
+    padding    : 0;
+    margin     : 0;
 }
 
 #toolbarMenu {
-    cursor: pointer;
+    cursor      : pointer;
     margin-right: 20px;
 }
 
@@ -38,7 +38,7 @@ body {
 
 #sidenav .avatar {
     background-image: url('http://i.pravatar.cc/300');
-    background-size: cover;
+    background-size : cover;
 }
 
 #sidenav .mat-list-item-content {
@@ -46,26 +46,28 @@ body {
 }
 
 #sidenav .menu-item {
-    width: 100%;
+    width        : 100%;
     border-radius: 0;
-    text-align: left;
-    padding: 10px;
-    color: var(--main-font-3-color);
+    text-align   : left;
+    padding      : 10px;
+    color        : var(--main-font-3-color);
 }
 
 #sidenav .menu-item:hover {
-    background: var(--main-font-3-color);;
+    background: var(--main-font-3-color);
+    ;
     color: white;
 }
 
 #sidenav .menu-item:active {
-    background: var(--main-font-3-color);;
+    background: var(--main-font-3-color);
+    ;
     color: white;
 }
 
 #sidenav .menu-item mat-icon {
     margin-right: 20px;
-    margin-left: 12px;
+    margin-left : 12px;
 }
 
 .dash-list h3 {
@@ -73,9 +75,9 @@ body {
 }
 
 .field-full-width {
-    width: 100%;
+    width     : 100%;
     margin-top: -15px;
-    font-size: 12px;
+    font-size : 12px;
 }
 
 // Custom Theming for Angular Material
@@ -96,9 +98,9 @@ body {
 // $slimSideNav-primary: mat-palette($mat-blue-grey);
 // $slimSideNav-primary:'';
 $slimSideNav-accent: mat-palette($mat-pink,
-A200,
-A100,
-A400);
+    A200,
+    A100,
+    A400);
 // The warn palette is optional (defaults to red).
 $slimSideNav-warn: mat-palette($mat-red);
 // Create the theme object (a Sass map containing all of the palettes).
@@ -114,30 +116,30 @@ $slimSideNav-warn: mat-palette($mat-red);
     // --main-brand-color: #bd9a36;
     /* Background Colors */
     // --main-bg-1-color: #3f51b5;
-    --main-bg-2-color: #ee436e;
-    --main-bg-3-color: #32AEB1;
-    --main-bg-4-color: #ffffff;
+    --main-bg-2-color     : #ee436e;
+    --main-bg-3-color     : #32AEB1;
+    --main-bg-4-color     : #ffffff;
     /* Fonts Families*/
-    --main-font-1-family: "Montserrat", sans-serif;
+    --main-font-1-family  : "Montserrat", sans-serif;
     /* Fonts Colors*/
-    --main-font-1-color: #ffffff;
-    --main-font-2-color: #000000;
-    --main-font-3-color: #32AEB1;
+    --main-font-1-color   : #ffffff;
+    --main-font-2-color   : #000000;
+    --main-font-3-color   : #32AEB1;
     // --main-font-4-color: rgba(250, 175, 63, 1);
-    --main-font-5-color: #137779;
+    --main-font-5-color   : #137779;
     /* Tiles */
-    --main-tile-1-color: #382f9c;
-    --main-tile-2-color: #f4f4f4;
+    --main-tile-1-color   : #382f9c;
+    --main-tile-2-color   : #f4f4f4;
 }
 
 html,
 body {
-    height: 100%;
+    height         : 100%;
     scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
+    margin        : 0;
     // font-family: Roboto, "Helvetica Neue", sans-serif;
     // font-family: var(--main-font-1-family);
 }
@@ -151,9 +153,9 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    box-shadow        : inset 0 0 6px rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-    background-clip: content-box;
+    background-clip   : content-box;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -163,154 +165,162 @@ button {
 
 .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb:before {
     content: "\f186";
-    font: normal normal normal 21px FontAwesome;
+    font   : normal normal normal 21px FontAwesome;
     padding: 2px;
-    color: black;
+    color  : black;
 }
 
-$mat-deep-purple: (
-  50: #ede7f6,
-  100: #d1c4e9,
-  200: #b39ddb,
-  300: #9575cd,
-  400: #7e57c2,
-  500: #3f307e,
-  600: #5e35b1,
-  700: #512da8,
-  800: #4527a0,
-  900: #311b92,
-  A100: #b388ff,
-  A200: #7c4dff,
-  A400: #651fff,
-  A700: #6200ea,
-  contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $light-primary-text,
-    400: $light-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-    A100: $dark-primary-text,
-    A200: $light-primary-text,
-    A400: $light-primary-text,
-    A700: $light-primary-text,
-  )
-);
+$mat-deep-purple: (50: #ede7f6,
+    100: #d1c4e9,
+    200: #b39ddb,
+    300: #9575cd,
+    400: #7e57c2,
+    500: #3f307e,
+    600: #5e35b1,
+    700: #512da8,
+    800: #4527a0,
+    900: #311b92,
+    A100: #b388ff,
+    A200: #7c4dff,
+    A400: #651fff,
+    A700: #6200ea,
+    contrast: (50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $light-primary-text,
+        400: $light-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $light-primary-text,
+        A400: $light-primary-text,
+        A700: $light-primary-text,
+    ));
 
 
-$mat-pink: (
-  50: #fce4ec,
-  100: #f8bbd0,
-  200: #f48fb1,
-  300: #f06292,
-  400: #ec407a,
-  500: #e46099,
-  600: #d81b60,
-  700: #c2185b,
-  800: #ad1457,
-  900: #880e4f,
-  A100: #ff80ab,
-  A200: #ff4081,
-  A400: #f50057,
-  A700: #c51162,
-  contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $dark-primary-text,
-    400: $dark-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-    A100: $dark-primary-text,
-    A200: $light-primary-text,
-    A400: $light-primary-text,
-    A700: $light-primary-text,
-  )
-);
+$mat-pink: (50: #fce4ec,
+    100: #f8bbd0,
+    200: #f48fb1,
+    300: #f06292,
+    400: #ec407a,
+    500: #e46099,
+    600: #d81b60,
+    700: #c2185b,
+    800: #ad1457,
+    900: #880e4f,
+    A100: #ff80ab,
+    A200: #ff4081,
+    A400: #f50057,
+    A700: #c51162,
+    contrast: (50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $dark-primary-text,
+        400: $dark-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $light-primary-text,
+        A400: $light-primary-text,
+        A700: $light-primary-text,
+    ));
 
 
 .theme-dark {
-    --main-font-2-color: #fdfdfd;
-    --main-font-3-color: #e46099;
-    --main-font-4-color: #3f307e;
-    --main-bg-1-color: #ff562265;
-    $slimSideNav-primary: mat-palette($mat-pink,500);
+    --main-font-2-color    : #fdfdfd;
+    --main-font-3-color    : #e46099;
+    --main-font-4-color    : #3f307e;
+    --main-bg-1-color      : #ff562265;
+    $slimSideNav-primary   : mat-palette($mat-pink, 500);
     // $slimSideNav-theme: mat-light-theme($slimSideNav-primary, $slimSideNav-accent, $slimSideNav-warn);
     // @include angular-material-theme($slimSideNav-theme);
     $slimSideNav-theme-dark: mat-dark-theme($slimSideNav-primary, $slimSideNav-accent, $slimSideNav-warn);
     @include angular-material-theme($slimSideNav-theme-dark);
+
     // @include mat-slide-toggle-icon-theme($slimSideNav-theme-dark);
     .mat-list-option,
     .mat-nav-list .mat-list-item,
     .mat-action-list .mat-list-item {
+
         &:hover,
         &:focus {
             background: var(--main-bg-1-color);
             // color: lightgoldenrodyellow;
         }
     }
+
     // for form field scss starts here
     .mat-form-field-appearance-outline {
         .mat-form-field-outline {
             color: var(--main-font-3-color);
         }
+
         .mat-form-field-outline-thick {
-            color: var(--main-font-4-color);
+            color: var(--main-font-3-color);
         }
+
         &.mat-focused {
             .mat-form-field-outline-thick {
                 color: var(--main-font-3-color);
             }
+
             &.mat-accent .mat-form-field-outline-thick {
-                color: var(--main-font-4-color);
+                color: var(--main-font-3-color);
             }
+
             &.mat-warn .mat-form-field-outline-thick {
-                color: var(--main-font-4-color);
+                color: var(--main-font-3-color);
             }
         }
+
         // Class repeated so that rule is specific enough to override focused accent color case.
         &.mat-form-field-invalid.mat-form-field-invalid {
             .mat-form-field-outline-thick {
                 color: red;
             }
         }
+
         &.mat-form-field-disabled {
             .mat-form-field-label {
                 color: red;
             }
+
             .mat-form-field-outline {
                 color: red;
             }
         }
     }
+
     // for form field scss ends here
 }
 
 .theme-light {
-    --main-font-2-color: #000000;
-    --main-font-3-color: #3f307e;
-    --main-font-4-color: #e46099;
-    --main-bg-1-color: #683ab775;
+    --main-font-2-color : #000000;
+    --main-font-3-color : #3f307e;
+    --main-font-4-color : #e46099;
+    --main-bg-1-color   : #683ab775;
     $slimSideNav-primary: mat-palette($mat-deep-purple, 500);
-    $slimSideNav-theme: mat-light-theme($slimSideNav-primary, $slimSideNav-accent, $slimSideNav-warn);
+    $slimSideNav-theme  : mat-light-theme($slimSideNav-primary, $slimSideNav-accent, $slimSideNav-warn);
     @include angular-material-theme($slimSideNav-theme);
+
     // @include mat-slide-toggle-icon-theme($slimSideNav-theme);
     .mat-list-option,
     .mat-nav-list .mat-list-item,
     .mat-action-list .mat-list-item {
+
         &:hover,
         &:focus {
             background: var(--main-bg-1-color);
             // color: lightgoldenrodyellow;
         }
     }
+
     // .mat-tab-label,
     // .mat-tab-link {
     //     color: black;
@@ -323,35 +333,43 @@ $mat-pink: (
         .mat-form-field-outline {
             color: var(--main-font-3-color);
         }
+
         .mat-form-field-outline-thick {
-            color: var(--main-font-4-color);
+            color: var(--main-font-3-color);
         }
+
         &.mat-focused {
             .mat-form-field-outline-thick {
                 color: var(--main-font-3-color);
             }
+
             &.mat-accent .mat-form-field-outline-thick {
-                color: var(--main-font-4-color);
+                color: var(--main-font-3-color);
             }
+
             &.mat-warn .mat-form-field-outline-thick {
-                color: var(--main-font-4-color);
+                color: var(--main-font-3-color);
             }
         }
+
         // Class repeated so that rule is specific enough to override focused accent color case.
         &.mat-form-field-invalid.mat-form-field-invalid {
             .mat-form-field-outline-thick {
                 color: red;
             }
         }
+
         &.mat-form-field-disabled {
             .mat-form-field-label {
                 color: red;
             }
+
             .mat-form-field-outline {
                 color: red;
             }
         }
     }
+
     // for form field scss ends here
     // .mat-form-field-outline-end {
     //     border-radius: 20px !important;

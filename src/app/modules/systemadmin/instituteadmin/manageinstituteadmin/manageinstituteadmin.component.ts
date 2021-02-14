@@ -81,15 +81,15 @@ export class ManageinstituteadminComponent implements OnInit {
     this.displayInstituteAdminDetails = true;
   }
 
-  applyFilter(data){
+  applyFilter(data) {
 
   }
 
   routeToViewInstituteAdmin() {
-    this.route.navigate(['home/viewinstituteadmin'])
+    this.route.navigate(['/viewinstituteadmin'])
   }
 
   routeToEditInstituteAdmin() {
-    this.route.navigate(['home/editinstituteadmin'])
+    this.route.navigate(['/editinstituteadmin'])
   }
 }

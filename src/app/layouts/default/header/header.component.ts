@@ -23,9 +23,9 @@ export class HeaderComponent implements OnInit {
   @Input() public resultUrl: any;
 
   constructor(private router: Router,
-    public dialog: MatDialog) { 
-      console.log(this.resultUrl);
-    }
+    public dialog: MatDialog) {
+    console.log(this.resultUrl);
+  }
 
   onDarkModeSwitched({ checked }: MatSlideToggleChange) {
     this.darkModeSwitched.emit(checked);
@@ -72,15 +72,20 @@ export class HeaderComponent implements OnInit {
   //   }
   // }
 
-   // institute routing starts here
+  // institute routing starts here
 
-   routeToAddInstitute() {
+  routeToAddInstitute() {
     this.router.navigate(['/addinstitute']);
+  }
+
+  routeToUploadInstitute() {
+    this.router.navigate(['/uploadtinstitute']);
   }
 
   routeToDraftInstitute() {
     this.router.navigate(['/draftinstitute']);
   }
+
 
   routeToViewInstitute() {
     this.router.navigate(['/viewinstitute']);
@@ -95,11 +100,15 @@ export class HeaderComponent implements OnInit {
   // instituteAdmin routing starts here
 
   routeToAddInstituteAdmin() {
-    this.router.navigate(['/home/addinstituteadmin']);
+    this.router.navigate(['/addinstituteadmin']);
+  }
+
+  routeToUploadInstituteAdmin() {
+    this.router.navigate(['/uploadinstituteadmin']);
   }
 
   routeToViewInstituteAdmin() {
-    this.router.navigate(['/home/viewinstituteadmin']);
+    this.router.navigate(['/viewinstituteadmin']);
 
   }
 
@@ -112,48 +121,67 @@ export class HeaderComponent implements OnInit {
   // Teacher routing starts here
 
   routeToAddTeacher() {
-    this.router.navigate(['/home/addteacher']);
+    this.router.navigate(['/addteacher']);
+  }
+
+  routeToUploadTeacher(){
+    this.router.navigate(['/uploadteacher']);
+  }
+
+  routeToDraftTeacher(){
+    this.router.navigate(['/draftteacher']);
   }
 
   routeToViewTeacher() {
-    this.router.navigate(['/home/viewteacher']);
+    this.router.navigate(['/viewteacher']);
 
   }
 
   routeToManageTeacher() {
-    this.router.navigate(['/home/manageteacher']);
+    this.router.navigate(['/manageteacher']);
   }
   // Teacher routing ends here
 
   // Students routing starts here
 
   routeToAddStudent() {
-    this.router.navigate(['/home/addstudent']);
+    this.router.navigate(['/addstudent']);
+  }
+
+  routeToDraftStudent(){
+    this.router.navigate(['/draftstudent']);
+  }
+
+  routeToUploadStudent(){
+    this.router.navigate(['/uploadstudent']);
   }
 
   routeToViewStudent() {
-    this.router.navigate(['/home/viewstudent']);
+    this.router.navigate(['/viewstudent']);
 
   }
 
   routeToManageStudent() {
-    this.router.navigate(['/home/managestudent']);
+    this.router.navigate(['/managestudent']);
   }
   // Student routing ends here
 
   // Keys routing starts here
 
   routeToAddKeys() {
-    this.router.navigate(['/home/addkeys']);
+    this.router.navigate(['/addkeys']);
+  }
+
+  routeToUploadKeys(){
+    this.router.navigate(['/uploadkeys']);
   }
 
   routeToViewKeys() {
-    this.router.navigate(['/home/viewkeys']);
-
+    this.router.navigate(['/viewkeys']);
   }
 
   routeToManageKeys() {
-    this.router.navigate(['/home/managekeys']);
+    this.router.navigate(['/managekeys']);
   }
   // Keys routing ends here
 

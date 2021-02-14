@@ -6,6 +6,7 @@ import { ViewInstituteComponent } from './view-institute/view-institute.componen
 import { EditInstituteComponent } from './edit-institute/edit-institute.component';
 import { MaterialImportModuleModule } from 'src/app/material-import-module/material-import-module.module';
 import { DraftInstituteComponent } from './draft-institute/draft-institute.component';
+import { UploadInstituteComponent } from './upload-institute/upload-institute.component';
 
 
 
@@ -15,7 +16,8 @@ import { DraftInstituteComponent } from './draft-institute/draft-institute.compo
     ManageinstituteComponent,
     ViewInstituteComponent,
     EditInstituteComponent,
-    DraftInstituteComponent],
+    DraftInstituteComponent,
+    UploadInstituteComponent],
   imports: [
     CommonModule,
     MaterialImportModuleModule

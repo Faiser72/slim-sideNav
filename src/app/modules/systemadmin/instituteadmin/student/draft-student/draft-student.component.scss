@@ -1,0 +1,46 @@
+.field-full-width {
+    width        : 100%;
+    // margin-top: -8px;
+    font-size    : 12px;
+}
+
+.main-bg {
+    color: var(--main-font-3-color);
+}
+
+.main-bg-2 {
+    color: var(--main-font-3-color);
+}
+
+.title-header {
+    text-align: center;
+    color     : var(--main-font-3-color);
+}
+
+button {
+    width: 5rem;
+}
+
+// table css starts here
+
+.example-container {
+    height  : 450px;
+    overflow: auto;
+}
+
+table th {
+    color          : var(--main-font-3-color);
+    text-align     : center;
+    // border: 1px solid;
+    // border-color: var(--main-font-2-color);
+}
+
+table {
+    width          : 100%;
+    text-align     : center;
+    // border: 1px solid;
+    // border-color: var(--main-font-2-color);
+}
+
+
+//   table css ends here

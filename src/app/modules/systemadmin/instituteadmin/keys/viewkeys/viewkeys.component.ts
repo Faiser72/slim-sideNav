@@ -25,7 +25,7 @@ export class ViewkeysComponent implements OnInit {
   }
 
   routeToEditKey() {
-    this.route.navigate(['home/editkeys'])
+    this.route.navigate(['/editkeys'])
   }
 
 }

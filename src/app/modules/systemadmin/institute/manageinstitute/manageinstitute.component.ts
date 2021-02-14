@@ -134,6 +134,6 @@ export class ManageinstituteComponent implements OnInit {
   }
 
   routeTOEditInstitute() {
-    this.route.navigate(['home/editinstitute'])
+    this.route.navigate(['/editinstitute'])
   }
 }

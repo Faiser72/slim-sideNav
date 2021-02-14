@@ -1,5 +1,5 @@
 <br />
-<h4 class="title-header">- Manage Institute Admin -</h4>
+<h4 class="title-header"> MANAGE INSTITUTE ADMIN</h4>
 <div class="container-fluid ">
     <div class="mt-5">
         <div class="container overflow-scroll">
@@ -52,7 +52,7 @@
                     </div> -->
                 </div>
                 <div class="pt-2">
-                    <mat-card class="mainCard pb-3 pt-3 shadow" *ngIf="gridView">
+                    <mat-card class="mainCard pb-3 pt-3 " *ngIf="gridView">
                         <div>
                             <div class="row pl-3 pr-2">
                                 <div class="col-md-2 pb-2 pt-2 hover" *ngFor="let itm of InstituteDetails"
@@ -63,8 +63,8 @@
                                         </div>
                                     </div>
                                     <div class="text-center mt-2">
-                                        <h6>{{itm.instituteName}}</h6>
-                                        <h6>{{itm.instituteId}}</h6>
+                                        <p>{{itm.instituteName}}</p>
+                                        <p>{{itm.instituteId}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -87,29 +87,34 @@
                 </div> -->
                 <div *ngIf="displayInstituteAdminDetails">
 
-                    <div class="row mt-3 pt-5 w-100">
-                        <div class="col-lg-12 col-md-12 col-sm-12 mx-auto text-center">
-                            <h5 class="title-header text-center">Selected Institute</h5>
+                    <div class="row mt-3 pt-3  mx-auto w-75">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-left">
+                            <h6 class="title-header text-left">Selected Institute</h6>
                         </div>
                     </div>
                     <div class="row mt-3 w-75 d-flex justify-content-around mx-auto">
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <p class="blue">Institute Name: &nbsp; <b> {{selectedInstituteName}}</b> </p>
+                            <p>Institute Name: &nbsp; <b> {{selectedInstituteName}}</b> </p>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12">
-                            <p class="blue">Institute Id: &nbsp; <b> {{selectedInstituteId}}</b> </p>
+                            <p>Institute Id: &nbsp; <b> {{selectedInstituteId}}</b> </p>
 
                         </div>
                     </div>
                 </div>
-                <div class="row pt-4 mt-3">
-                    <div class="col-md-2">
-                        <!-- <label class="form-label labelName mt-2">Select Institute Admin</label> -->
+                <div class="row pt-4 mt-3  w-75 mx-auto">
+                    <div class="col float-left text-left">
                         <p>Select Institute Admin</p>
+
                     </div>
-                    <div class="col-md-6">
+                </div>
+                <div class="row  w-75 mx-auto">
+                    <!-- <div class="col-md-2">
+                        <p>Select Institute Admin</p>
+                    </div> -->
+                    <div class="col-md-10">
                         <!-- <div class="card mainCard"> -->
-                        <mat-card class="mainCard shadow">
+                        <mat-card class="mainCard ">
 
                             <div class="row pb-3 hover" title="Select Institute Admin Here"
                                 *ngFor="let itm of InstituteDetails">
@@ -122,30 +127,44 @@
                                 </div>
                                 <div class="col-md-9 mt-3 ml-4">
                                     <!-- <input type="text" class="form-control cusInputField" placeholder="Admin 1"> -->
-                                    <h5>{{itm.instituteName}}</h5>
+                                    <p>{{itm.instituteName}}</p>
                                 </div>
                             </div>
                         </mat-card>
                         <!-- </div> -->
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-6">
                         <div class="pt-5 d-flex justify-content-end">
-                            <!-- <button type="button" class="btn cusTomBut" (click)='routeToViewInstituteAdmin()'>View
-                                Institute Admin</button> -->
                                 <button type="button" mat-raised-button color="primary" class=" mr-3btn cusTomBut text-light" (click)='routeToViewInstituteAdmin()'>View
                                     Institute Admin</button>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="pt-5 text-left">
-                            <!-- <button type="button" class="btn cusTomBut ml-3" (click)='routeToEditInstituteAdmin()'>Edit
-                                Institute Admin</button> -->
                                 <button type="button" mat-raised-button color="primary" class=" ml-3btn cusTomBut text-light" (click)='routeToEditInstituteAdmin()'>Edit
                                     Institute Admin</button>
                         </div>
                     </div>
+                </div> -->
+                <div class="row w-75 float-right d-flex justify-content-right mt-4 mb-4">
+
+                    <div class="col-lg-4 float-right">
+                        <!--  -->
+                    </div>
+                    <div class="col-lg-2 float-left">
+                        <button type="button" mat-raised-button class="main-bg"
+                            (click)='routeToViewInstituteAdmin()'>VIEW</button>
+                    </div>
+                    <div class="col-lg-2 float-left">
+                        <button type="button" mat-raised-button color="primary" class="text-light"
+                            (click)='routeToEditInstituteAdmin()'>EDIT</button>
+                    </div>
+                    <div class="col-lg-4 float-right">
+                        <!--  -->
+                    </div>
+
                 </div>
             </div>
         </div>

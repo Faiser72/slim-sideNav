@@ -1,7 +1,7 @@
 <div class="container-fluid mt-2 p-0">
     <div class=" ">
         <div class="card-title">
-            <h4 class="text-center main-bg pt-2 mt-1 mb-3">- View Keys -</h4>
+            <h5 class="text-center main-bg pt-2 mt-1 mb-5">View Keys</h5>
         </div>
         <!-- <mat-divider class="mx-5"></mat-divider> -->
         <form action="" class="form-group customhover" [formGroup]="  viewKeysForm">
@@ -11,21 +11,27 @@
                         <div class="col-lg-6 col-sm-12 col-md-6">
                             <mat-form-field class="field-full-width" appearance="outline">
                                 <mat-label>Type Of Keys<sup class="text-danger">*</sup></mat-label>
-                                <input matInput placeholder="Ex. Select Type Of Key" value="" formControlName="typeOfKey" />
+                                <input matInput placeholder="Ex. Select Type Of Key" value=""
+                                    formControlName="typeOfKey" />
                             </mat-form-field>
-                            <p style="color: red;" *ngIf="  viewKeysForm.get('typeOfKey') &&   viewKeysForm.get('typeOfKey').touched &&   viewKeysForm.get('typeOfKey').invalid">
+                            <p style="color: red;"
+                                *ngIf="  viewKeysForm.get('typeOfKey') &&   viewKeysForm.get('typeOfKey').touched &&   viewKeysForm.get('typeOfKey').invalid">
+                                Please select this field</p>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <mat-form-field class="field-full-width" appearance="outline">
+                                <mat-label>Type Of Keys<sup class="text-danger">*</sup></mat-label>
+                                <input matInput placeholder="Ex. Select Type Of Key" value=""
+                                    formControlName="typeOfKey" />
+                            </mat-form-field>
+                            <p style="color: red;"
+                                *ngIf="  viewKeysForm.get('typeOfKey') &&   viewKeysForm.get('typeOfKey').touched &&   viewKeysForm.get('typeOfKey').invalid">
                                 Please select this field</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-6 col-sm-12 col-md-6">
-                            <mat-form-field class="field-full-width" appearance="outline">
-                                <mat-label>Type Of Keys<sup class="text-danger">*</sup></mat-label>
-                                <input matInput placeholder="Ex. Select Type Of Key" value="" formControlName="typeOfKey" />
-                            </mat-form-field>
-                            <p style="color: red;" *ngIf="  viewKeysForm.get('typeOfKey') &&   viewKeysForm.get('typeOfKey').touched &&   viewKeysForm.get('typeOfKey').invalid">
-                                Please select this field</p>
-                        </div>
+
                     </div>
                     <div class="row">
                         <div class="col-lg-6 col-sm-12 col-md-6">
@@ -36,22 +42,24 @@
                                 </div>
                             </mat-card>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-9 col-md-6 col-sm-12 mt-4">
+                        <div class="col-lg-6 col-sm-12 col-md-6">
                             <mat-radio-group aria-label="Select an option" class="ml-4" color="primary">
                                 <mat-radio-button value="1">Activate</mat-radio-button>
                                 <mat-radio-button value="2">Deactivate</mat-radio-button>
                             </mat-radio-group>
+
+                            <div class="text-center float-right mt-5">
+                                <button type="button" class="text-light btns" mat-raised-button color="primary"
+                                    (click)="routeToEditKey()">
+                                    Edit Key
+                                </button>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
-            <div class="text-center">
-                <button type="button" class="text-light btns" mat-raised-button color="primary" (click)="routeToEditKey()">
-                    Edit Key
-                </button>
-            </div>
+            
         </form>
     </div>
 </div>

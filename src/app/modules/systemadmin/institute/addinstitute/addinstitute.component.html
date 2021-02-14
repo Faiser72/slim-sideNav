@@ -61,8 +61,33 @@
                 </div>
             </div>
 
+            <div class="row d-flex justify-content-around w-75 mx-auto mt-3">
+                <div class="col">
+                    <mat-form-field appearance="outline" class="field-full-width">
+                        <mat-label>Address</mat-label>
+                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+
             <div class="row w-75 float-right d-flex justify-content-right mt-3">
-                <div class="col-lg-6 float-right">
+                <div class="col-lg-4 float-left">
+                    <div class="text-left mt-2" *ngIf='isShowPic'>
+                        <img [src]="placeholder_path" alt="" width="150px" height="180px"
+                            class="p-1 border profile-holder" (click)="photoUpload.click()" />
+                        <input type="file" name="photoUpload" accept="image/*" id="photoUpload" #photoUpload
+                            (change)="getPhotoFile(photoUpload, $event)" hidden />
+                        <div>
+                            <span class="candidate-photo-name">&nbsp;{{ doctorPhotoName }}&nbsp;</span>
+                            <span style="color: red;" *ngIf="photoMessage">{{
+                                photoMessage
+                                }}</span>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+                <div class="col-lg-2 float-right">
+                    <button type="button" mat-raised-button color="primary" (click)="showUpload()">Photo</button>
                 </div>
                 <div class="col-lg-2 float-right">
                     <button type="button" mat-raised-button class="main-bg">SAVE</button>

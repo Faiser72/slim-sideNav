@@ -1,322 +1,173 @@
 
 <br />
-<h4 class="title-header">- Edit Institute Details -</h4>
-<div class="container">
-    <!-- <div class="text-center">
-        <p class="MainTit main-bg">Edit Institute Details</p>
-    </div> -->
+<h5 class="title-header"> EDIT INSTITUTE</h5>
+
+<div class="container pt-3">
     <form action="">
-        <div class="container pt-4">
-            <div class="row">
-                <!-- <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="institute name" class="form-label labelName">Institute Name</label>
-                                <input type="text" class="form-control cusInputField"
-                                    placeholder="Ex: Sikkim Institute">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="institute name" class="form-label labelName">Phone Number</label>
-                                <input type="text" class="form-control cusInputField" placeholder="Ex: 8867883790">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="institute name" class="form-label labelName">Date of Establishment</label>
-                                <input type="date" class="form-control cusInputField" placeholder="Ex: 07/08/2001">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="emailAddress" class="form-label labelName">Email address</label>
-                                <input type="email" class="form-control cusInputField" placeholder="name@example.com">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="form-label labelName">Package Purchased</label>
-                                <select class="form-control cusInputField" aria-label="Default select example">
-                                    <option selected>select the plan</option>
-                                    <option value="1">Plan 1</option>
-                                    <option value="2">Plan 2</option>
-                                    <option value="3">Plan 3</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="institute name" class="form-label labelName">Institute Id</label>
-                                <input type="text" class="form-control cusInputField" placeholder="Ex: Institute 00001">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="dojExamOwl" class="form-label labelName">Date of Joining Examowl</label>
-                                <input type="date" class="form-control cusInputField" placeholder="Ex: 07/08/2001">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="dojExamOwl" class="form-label labelName">Expiry date for Purchased
-                                    Plan</label>
-                                <input type="date" class="form-control cusInputField" placeholder="Ex: 07/08/2001">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="mb-3">
-                                <label for="address" class="form-label labelName">Address</label>
-                                <input type="text" class="form-control cusInputField" placeholder="Ex: Bangalore">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="addrssField">
-                                <input type="text" class="form-control cusInputField" placeholder="Ex: Karnataka">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="addrssField">
-                                <input type="text" class="form-control cusInputField" placeholder="Ex: India">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="institute name" class="form-label labelName">Status</label><br>
-                                <mat-radio-group aria-label="Select an option">
-                                    <mat-radio-button value="1" class="radioText">Activate</mat-radio-button>
-                                    <mat-radio-button value="2" class="ml-5 radioText">Deactivate</mat-radio-button>
-                                </mat-radio-group>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+        <div class="container">
+            <div class="row d-flex justify-content-around mx-auto">
+                <div class="col-lg-5">
 
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <!-- <label for="institute name" class="form-label labelName">Institute Name</label>
-                                <input type="text" class="form-control cusInputField"
-                                    placeholder="Ex: Sikkim Institute"> -->
-                                    <mat-form-field class="field-full-width" appearance="outline">
-                                        <mat-label>Institute Name</mat-label>
-                                        <input matInput placeholder="Ex. Sikkim Institute" value=""  />
-                                    </mat-form-field>
-                            </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-12">
+                    <div class="text-left mt-2">
+                        <img [src]="placeholder_path" alt="" width="150px" height="180px"
+                            class="p-1 border profile-holder" (click)="photoUpload.click()" />
+                        <input type="file" name="photoUpload" accept="image/*" id="photoUpload" #photoUpload
+                            (change)="getPhotoFile(photoUpload, $event)" hidden />
+                        <div>
+                            <span class="candidate-photo-name">&nbsp;{{ doctorPhotoName }}&nbsp;</span>
+                            <span style="color: red;" *ngIf="photoMessage">{{
+                                photoMessage
+                                }}</span>
                         </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <!-- <label for="institute name" class="form-label labelName">Phone Number</label>
-                                <input type="text" class="form-control cusInputField" placeholder="Ex: 8867883790"> -->
-
-                                <mat-form-field class="field-full-width" appearance="outline">
-                                    <mat-label>Phone Number<sup class="text-danger">*</sup></mat-label>
-                                    <input matInput placeholder="Ex. 8989765456" value=""  />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <!-- <label for="institute name" class="form-label labelName">Date of Establishment</label>
-                                <input type="date" class="form-control cusInputField" placeholder="Ex: 07/08/2001"> -->
-                                <mat-form-field class="field-full-width" appearance="outline">
-                                    <mat-label>Date of Establishment<sup class="text-danger">*</sup></mat-label>
-                                    <input matInput type="date" placeholder="Ex. 06-01-2021" value=""  />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <!-- <label for="institute name" class="form-label labelName">Institute Id</label>
-                                <input type="text" class="form-control cusInputField" placeholder="Ex: Institute 00001"> -->
-                                <mat-form-field class="field-full-width" appearance="outline">
-                                    <mat-label>Institute Id<sup class="text-danger">*</sup></mat-label>
-                                    <input matInput placeholder="Ex. Institute 00001" value=""  />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <!-- <label class="form-label labelName">Package Purchased</label>
-                                <select class="form-control cusInputField" aria-label="Default select example">
-                                    <option selected>select the plan</option>
-                                    <option value="1">Plan 1</option>
-                                    <option value="2">Plan 2</option>
-                                    <option value="3">Plan 3</option>
-                                </select> -->
-                                <mat-form-field appearance="outline" class="field-full-width">
-                                    <mat-label>Package Purchased</mat-label>
-                                    <mat-select >
-                                      <mat-option value="2">Plan 1</mat-option>
-                                      <mat-option value="2">Plan 2</mat-option>
-                                      <mat-option value="3">Plan 3</mat-option>
-                                    </mat-select>
-                                  </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <!-- <label for="emailAddress" class="form-label labelName">Email address</label>
-                                <input type="email" class="form-control cusInputField" placeholder="name@example.com"> -->
-                                <mat-form-field class="field-full-width" appearance="outline">
-                                    <mat-label>Email address<sup class="text-danger">*</sup></mat-label>
-                                    <input matInput placeholder="Ex. name@example.com" value=""  />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="">
-                                <!-- <label for="dojExamOwl" class="form-label labelName">Date of Joining Examowl</label>
-                                <input type="date" class="form-control cusInputField" placeholder="Ex: 07/08/2001"> -->
-                                <mat-form-field class="field-full-width" appearance="outline">
-                                    <mat-label>Date of Joining Examowl</mat-label>
-                                    <input matInput type="date" placeholder="Ex. 06-01-2021" value=""  />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="">
-                                <!-- <label for="dojExamOwl" class="form-label labelName">Expiry date for Purchased
-                                    Plan</label>
-                                <input type="date" class="form-control cusInputField" placeholder="Ex: 07/08/2001"> -->
-                                <mat-form-field class="field-full-width" appearance="outline">
-                                    <mat-label>Expiry date for Purchased
-                                        Plan</mat-label>
-                                    <input matInput type="date" placeholder="Ex. 06-01-2021" value=""  />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                    </div>
-                    <h5 class="main-bg text-left">Address</h5>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="addrssField">
-                                <!-- <label for="address" class="form-label labelName">Address</label>
-                                <input type="text" class="form-control cusInputField" placeholder="Ex: Bangalore"> -->
-                                <mat-form-field class="field-full-width" appearance="outline">
-                                    <mat-label>Address</mat-label>
-                                    <input matInput placeholder="Ex. Bangalore" value=""  />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="addrssField">
-                                <!-- <input type="text" class="form-control cusInputField" placeholder="Ex: Karnataka"> -->
-                                <mat-form-field class="field-full-width" appearance="outline">
-                                    <input matInput  placeholder="Ex. Karnataka" value=""  />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="addrssField">
-                                <!-- <input type="text" class="form-control cusInputField" placeholder="Ex: India"> -->
-                                <mat-form-field class="field-full-width" appearance="outline">
-                                    <input matInput  placeholder="Ex. India" value=""  />
-                                </mat-form-field>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="institute name" class="form-label labelName">Status</label><br>
-                                <mat-radio-group aria-label="Select an option" color='primary'>
-                                    <mat-radio-button value="1" class="radioText">Activate</mat-radio-button>
-                                    <mat-radio-button value="2" class="ml-5 radioText">Deactivate</mat-radio-button>
-                                </mat-radio-group>
-                            </div>
-                        </div>
+                        <br />
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="row">
-                        <div class="ml-5">
-                            <div class="hex hex-1 hex-gap mt-5" title="Click Here To Upload">
-                                <div class="inner">
-                                    <img src="../../../../../assets/imgs/man.png" alt="">
-                                </div>
-                                <div class="corner-1"></div>
-                                <div class="corner-2"></div>
-                                <input type="file"
-                                    style="opacity: 0.0; position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height:100%;" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-4 mb-2">
-                        <div class="pt-2 offset-3">
-                            <!-- <button type="button" class="btn cusTomBut">Save Changes</button> -->
-                            <button type="button" mat-raised-button color="primary" class=" cusTomBut text-light">Save Changes</button>
+                <div class="col-lg-5">
 
-                        </div>
-                    </div>
+                </div>
 
-
+            </div>
+            <div class="row d-flex justify-content-around w-75 mx-auto">
+                <div class="col">
+                    <p class="mb-3 text-left main-bg-2">Institute Details</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="row pt-3 mx-auto">
-                        <!-- <label for="institute name" class="form-label labelName">Institute Admin</label><br> -->
-                        <h5 class="main-bg text-center">Institute Admin</h5>
-
-                    </div>
-                    <div class="row pt-2 mt-3">
-                        <div class="col-md-6">
-                            <!-- <input type="text" class="form-control cusInputField" placeholder="Ex: Institute Admin 1"> -->
-                            <mat-form-field class="field-full-width" appearance="outline">
-                                <input matInput  placeholder="Ex. Institute Admin 1" value=""  />
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-6">
-                            <!-- <input type="text" class="form-control cusInputField"
-                                placeholder="Ex: Institute Admin User ID"> -->
-                                <mat-form-field class="field-full-width" appearance="outline">
-                                    <input matInput  placeholder="Ex. Institute Admin User ID" value=""  />
-                                </mat-form-field>
-                        </div>
-                    </div>
-                    <div class="row pt-2">
-                        <div class="col-md-6">
-                            <!-- <input type="text" class="form-control cusInputField" placeholder="Ex: Institute Admin 2"> -->
-                            <mat-form-field class="field-full-width" appearance="outline">
-                                <input matInput  placeholder="Ex. Institute Admin 2" value=""  />
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-6">
-                            <!-- <input type="text" class="form-control cusInputField"
-                                placeholder="Ex: Institute Admin User ID"> -->
-                                <mat-form-field class="field-full-width" appearance="outline">
-                                    <input matInput  placeholder="Ex. Institute Admin User ID" value=""  />
-                                </mat-form-field>
-                        </div>
-                    </div>
+            <div class="row d-flex justify-content-around w-75 mx-auto">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <mat-label>Institute Name</mat-label>
+                        <input matInput placeholder="Ex. Sikkim Institute" value="" />
+                    </mat-form-field>
                 </div>
-                <div class="col-md-4">
-                    <div class="row mt-5 mb-3">
-                        <div class="pt-2 mt-5 offset-3">
-                            <!-- <button type="button" class="btn cusTomBut">Edit Institute Admin</button> -->
-                            <button type="button" mat-raised-button color="primary" class=" text-light">Edit Institute Admin</button>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <mat-label>Phone Number<sup class="text-danger">*</sup></mat-label>
+                        <input matInput placeholder="Ex. 8989765456" value="" />
+                    </mat-form-field>
+                </div>
+            </div>
 
-                        </div>
-                    </div>
+            <div class="row d-flex justify-content-around w-75 mx-auto mt-3">
+                <div class="col">
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <mat-label>Email address<sup class="text-danger">*</sup></mat-label>
+                        <input matInput placeholder="Ex. name@example.com" value="" />
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-around w-75 mx-auto mt-3">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <mat-label>Date of Establishment<sup class="text-danger">*</sup></mat-label>
+                        <input matInput type="date" placeholder="Ex. 06-01-2021" value="" />
+                    </mat-form-field>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <mat-label>Institute Id<sup class="text-danger">*</sup></mat-label>
+                        <input matInput placeholder="Ex. Institute 00001" value="" />
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-around w-75 mx-auto mt-3">
+                <div class="col">
+                    <mat-form-field appearance="outline" class="field-full-width">
+                        <mat-label>Package Purchased</mat-label>
+                        <mat-select>
+                            <mat-option value="2">Plan 1</mat-option>
+                            <mat-option value="2">Plan 2</mat-option>
+                            <mat-option value="3">Plan 3</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-around w-75 mx-auto mt-3">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <mat-label>Date of Joining Examowl</mat-label>
+                        <input matInput type="date" placeholder="Ex. 06-01-2021" value="" />
+                    </mat-form-field>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <mat-label>Expiry date for Purchased
+                            Plan</mat-label>
+                        <input matInput type="date" placeholder="Ex. 06-01-2021" value="" />
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-around w-75 mx-auto mt-3">
+                <div class="col">
+                    <mat-form-field appearance="outline" class="field-full-width">
+                        <mat-label>Address</mat-label>
+                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row w-75 float-right d-flex justify-content-right mt-3 mb-5">
+                <div class="col-lg-6 float-left mt-2">
+                    <!-- <label for="institute name" class="form-label labelName">Status</label> -->
+                    <mat-radio-group aria-label="Select an option" color='primary'>
+                        <mat-radio-button value="1" class="radioText">Activate</mat-radio-button>
+                        <mat-radio-button value="2" class="ml-5 radioText">Deactivate</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <div class="col-lg-2 float-right">
+                    <!-- <button type="button" mat-raised-button class="main-bg">SAVE</button> -->
+                </div>
+                <div class="col-lg-2 float-right">
+                    <button type="button" mat-raised-button color="primary" class="text-light">SAVE</button>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-around w-75 mx-auto mt-5">
+                <div class="col">
+                    <p class="mb-3 text-left main-bg-2">Institute Admin Details</p>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-around w-75 mx-auto">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <input matInput placeholder="Ex. Institute Admin 1" value="" />
+                    </mat-form-field>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <input matInput placeholder="Ex. Institute Admin User ID" value="" />
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-around w-75 mx-auto  mt-3">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <input matInput placeholder="Ex. Institute Admin 2" value="" />
+                    </mat-form-field>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <mat-form-field class="field-full-width" appearance="outline">
+                        <input matInput placeholder="Ex. Institute Admin User ID" value="" />
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row w-75 float-right d-flex justify-content-right mt-3 mb-5">
+                <div class="col-lg-6 float-left mt-2">
+                </div>
+
+                <div class="col-lg-2 float-right">
+                    <!-- <button type="button" mat-raised-button class="main-bg">SAVE</button> -->
+                </div>
+                <div class="col-lg-2 float-right">
+                    <button type="button" mat-raised-button color="primary" class="text-light">EDIT</button>
                 </div>
             </div>
         </div>

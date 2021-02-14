@@ -11,70 +11,55 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class EditstudentComponent implements OnInit {
 
-  editStudentDetailsForm: FormGroup;
-  // phonePattern = "^[0-9_-]{10}$";
-  phonePattern = "^[1-9]{1}[0-9]{9}$";
-  minDate: any;
-  maxDate: any;
+  // upload starts here
+  // fileUploads
+  uploadFiles = new FormData();
+  photoFile: FileList;
+  resumeFile: FileList;
+  resumecvFile: string | Blob;
+  ppFile: string | Blob;
+  placeholder_path: string;
+  resumeFileName: string;
+  doctorPhotoName: string;
+  photoMessage: string;
+  resumeMessage: string;
+  doctorRoleList: any;
+  isShowPic: boolean = false;
+  //  upload ends here
 
-  age: number;
-
-  constructor(private fb: FormBuilder,
-    private appComponent: AppComponent,
-    private router: Router,
-    private _snackBar: MatSnackBar,
-  ) {
-    // for date validation starts
-    var minCurrentDate = new Date();
-    var maxNewDate = new Date();
-    this.minDate = minCurrentDate;
-    this.maxDate = maxNewDate.setMonth(maxNewDate.getMonth() + 1);
-    // for date validation ends
-  }
-
-  ageFromDateOfBirth(dob){
-    
+  constructor(private router: Router) {
+    this.placeholder_path = "../../../../assets/Placeholder.jpg";
   }
 
   ngOnInit() {
-    this.editStudentDetailsFormBuilder();
   }
 
-  editStudentDetailsFormBuilder() {
-    this.editStudentDetailsForm = this.fb.group({
-      name: [null, [Validators.required, Validators.minLength(3)]],
-      phoneNumber: [
-        null,
-        [Validators.required, Validators.pattern(this.phonePattern)],
-      ],
-      dob: [
-        null,
-        [
-          Validators.required
-        ],
-      ],
-      joiningDate: [null, [Validators.required]],
-      emailId: [
-        null,
-        Validators.compose([
-          Validators.required,
-          Validators.pattern("^[a-zA-Z0-9._-]+@[a-zA-Z]+.[a-zA-Z]{2,4}$"),
-        ]),
-      ],
-      subject: [null, [Validators.required]],
-      class: [null, [Validators.required]],
-      avatar: [null],
-      rollNo: [null, [Validators.required]],
-      classTeacher:[null,[Validators.required]],
-      studentUserId: [null, [Validators.required]],
-      areaOfInterest: [null],
-
-    });
+  showUpload() {
+    this.isShowPic = true;
   }
 
-  editStudentDetailsFormSubmit() {
 
+  getPhotoFile(photoUpload: HTMLInputElement, event: any) {
+    const fileName = event.target.files[0].name;
+    this.photoFile = photoUpload.files;
+
+    if (this.photoFile.length === 0) return;
+
+    let mimeType = this.photoFile[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.placeholder_path = "../../../../assets/Placeholder.jpg";
+      this.photoMessage = "Only image files are supported.";
+      this.doctorPhotoName = "No File Chosen";
+      return;
+    } else {
+      let reader = new FileReader();
+      reader.readAsDataURL(this.photoFile[0]);
+      reader.onload = (_event) => {
+        this.placeholder_path = reader.result as string;
+        this.doctorPhotoName = fileName;
+      };
+      this.photoMessage = null;
+      this.ppFile = event.target.files[0];
+    }
   }
-
 }
-
